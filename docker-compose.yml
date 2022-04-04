@@ -1,0 +1,15 @@
+services:
+  user:
+    build: ./services/ # pourrait être une image
+    environment:
+      - service=users
+      - db=db.com:27001
+    ports:
+      - "2001:80"
+  music:
+    build: ./services/ # pourrait être une image
+    environment:
+      - service=musics
+      - db=db.com:27002
+    ports:
+      - "2002:80"
